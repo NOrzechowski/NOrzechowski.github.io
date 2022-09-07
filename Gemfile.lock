@@ -131,6 +131,8 @@ GEM
     jekyll-optional-front-matter (0.3.2)
       jekyll (>= 3.0, < 5.0)
     jekyll-paginate (1.1.0)
+    jekyll-postcss (0.5.0)
+    jekyll-purgecss (0.3.0)
     jekyll-readme-index (0.3.0)
       jekyll (>= 3.0, < 5.0)
     jekyll-redirect-from (0.16.0)
@@ -249,6 +251,7 @@ GEM
       unf_ext
     unf_ext (0.0.8.2)
     unicode-display_width (1.8.0)
+    webrick (1.7.0)
     zeitwerk (2.6.0)
 
 PLATFORMS
@@ -257,11 +260,13 @@ PLATFORMS
 DEPENDENCIES
   github-pages
   http_parser.rb (~> 0.6.0)
-  jekyll-feed (~> 0.12)
+  jekyll-postcss
+  jekyll-purgecss
   minima (~> 2.5)
   tzinfo (~> 1.2)
   tzinfo-data
   wdm (~> 0.1.1)
+  webrick (~> 1.7)
 
 BUNDLED WITH
    2.3.21

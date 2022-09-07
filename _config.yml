@@ -13,6 +13,7 @@ theme: minima
 plugins:
 #  - jekyll-feed
   - jekyll-postcss
+  - farady-retry
 
 
 # Exclude from processing.
@@ -34,3 +35,6 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+sass:
+  sass_dir: _sass
+  # style: compressed
