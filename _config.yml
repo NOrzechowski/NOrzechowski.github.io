@@ -38,5 +38,5 @@ plugins:
 sass:
   sass_dir: _sass/
   load_paths:
-    - ../node_modules/
+    - /node_modules/
   # style: compressed

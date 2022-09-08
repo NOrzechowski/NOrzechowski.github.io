@@ -1,7 +1,7 @@
 module.exports = {
     plugins: [
       require('postcss-import')({
-        addModulesDirectories: ["assets/"]
+        addModulesDirectories: ["_sass/", "node_modules"]
       }),
       require('tailwindcss'),
       require('autoprefixer'),
