@@ -11,9 +11,7 @@ github_username:  NOrzechowski
 # Build settings
 theme: minima
 plugins:
-#  - jekyll-feed
   - jekyll-postcss
-  - farady-retry
 
 
 # Exclude from processing.
@@ -34,12 +32,10 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-
-include: 
-  - node_modules/ 
+include:
+  - node_modules/
 
 sass:
   load_paths:
-    - _sass/
-    - node_modules/
-  # style: compressed
+    - /_sass
+    - /node_modules
