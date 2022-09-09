@@ -37,9 +37,9 @@ exclude:
 
 include: 
   - node_modules/ 
-  
+
 sass:
-  sass_dir: _sass/
   load_paths:
-    - /node_modules/
+    - _sass/
+    - node_modules/
   # style: compressed
