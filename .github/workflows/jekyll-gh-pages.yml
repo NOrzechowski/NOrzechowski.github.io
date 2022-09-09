@@ -30,7 +30,7 @@ jobs:
       - name: Build Dependencies
         run: npm install
       - name: Setup Pages
-        uses: actions/configure-pages@v
+        uses: actions/configure-pages@v2
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
