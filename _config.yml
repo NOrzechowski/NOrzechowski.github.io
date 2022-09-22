@@ -32,8 +32,6 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-include:
-  - node_modules/
 
 sass:
   load_paths:
