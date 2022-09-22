@@ -1,6 +1,11 @@
 /**
  * Site header
  */
+
+ .this-is-a-silly-little-class {
+  border-top: 5px solid $grey-color-dark;
+ }
+
 .site-header {
   border-top: 5px solid $grey-color-dark;
   border-bottom: 1px solid $grey-color-light;
