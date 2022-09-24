@@ -37,4 +37,4 @@ exclude:
 sass:
   load_paths:
     - /_sass
-    # - /node_modules
+    - /node_modules
