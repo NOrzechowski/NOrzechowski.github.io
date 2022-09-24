@@ -8,7 +8,7 @@
     "tailwindcss": "^3.1.8"
   },
   "scripts": {
-    "serve": "bundle exec jekyll serve --trace",
-    "build": "bundle exec jekyll build --trace"
+    "serve": "bundle exec jekyll serve --verbose",
+    "build": "bundle exec jekyll build --verbose"
   }
 }
