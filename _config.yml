@@ -10,8 +10,8 @@ github_username:  NOrzechowski
 
 # Build settings
 theme: minima
-plugins:
-  - jekyll-postcss
+# plugins:
+#   # - jekyll-postcss
 
 
 # Exclude from processing.
