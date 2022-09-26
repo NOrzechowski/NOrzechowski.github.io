@@ -10,7 +10,9 @@ github_username:  NOrzechowski
 
 # Build settings
 theme: minima
-# plugins:
+plugins:
+  - 'jekyll-sass-converter'
+
 #    - jekyll-postcss
 
 
