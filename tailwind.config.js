@@ -1,5 +1,5 @@
 module.exports = {
-    content: ["./**/*.{html,js,md}"],
+    content: ["*"],
     purge: [
     ],
     darkMode: false,
