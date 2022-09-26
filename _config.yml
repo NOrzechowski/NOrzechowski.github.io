@@ -11,11 +11,7 @@ github_username:  NOrzechowski
 # Build settings
 theme: minima
 plugins:
-  - 'jekyll-sass-converter'
-
-#    - jekyll-postcss
-
-
+  - jekyll-postcss
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
@@ -35,11 +31,11 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 
+# include:
+#   - /node_modules
+
 sass:
   load_paths:
-    - /_sass
-    - /node_modules
+    - /node_modules/
 
 
-include: 
-  -  node_modules/tailwindcss

@@ -10,5 +10,9 @@
   "scripts": {
     "serve": "bundle exec jekyll serve --verbose",
     "build": "bundle exec jekyll build --verbose"
+  },
+  "dependencies": {
+    "postcss-cli": "^10.0.0",
+    "postcss-scss": "^4.0.5"
   }
 }
