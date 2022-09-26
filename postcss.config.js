@@ -1,8 +1,10 @@
 module.exports = {
   plugins: [
-    require('postcss-import')({
-      "addModulesDirectories": ["_sass"]
+    require('postcss-easy-import')({
+      extensions: ".scss", 
+      addModulesDirectories: ["_sass"]
     }),
+    require('precss'),
     require('tailwindcss'),
     require('autoprefixer'),
     ...(process.env.JEKYLL_ENV == "production"
