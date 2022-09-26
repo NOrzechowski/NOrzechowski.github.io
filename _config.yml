@@ -31,8 +31,8 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 
-# include:
-#   - /node_modules
+include:
+  - /node_modules/
 
 sass:
   load_paths:
