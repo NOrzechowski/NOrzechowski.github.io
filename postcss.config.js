@@ -1,10 +1,10 @@
 module.exports = {
-  parser: 'postcss-scss',
   plugins: [
-    require('postcss-import')({
-      addModulesDirectories: ["node_modules", "assets/custom-css"]
-    }),
-    require("tailwindcss")("./_includes/tailwind.config.js"),
-    require("autoprefixer")
+    require('postcss-import'),
+    require('tailwindcss'),
+    require('autoprefixer'),
+    ...(process.env.JEKYLL_ENV == "production"
+      ? [require('cssnano')({ preset: 'default' })]
+      : [])
   ]
 };

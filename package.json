@@ -1,18 +1,14 @@
 {
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.7",
-    "autoprefixer": "^10.4.8",
+    "autoprefixer": "^10.4.12",
     "cssnano": "^5.1.13",
-    "postcss": "^8.4.16",
+    "postcss": "^8.2.1",
     "postcss-import": "^15.0.0",
     "tailwindcss": "^3.1.8"
   },
   "scripts": {
     "serve": "bundle exec jekyll serve --verbose",
     "build": "bundle exec jekyll build --verbose"
-  },
-  "dependencies": {
-    "postcss-cli": "^10.0.0",
-    "postcss-scss": "^4.0.5"
   }
 }
