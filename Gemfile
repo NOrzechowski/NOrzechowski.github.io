@@ -17,7 +17,7 @@ gem "minima", "~> 2.5"
 gem "github-pages", group: :jekyll_plugins
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-  gem "jekyll-postcss"
+  gem "jekyll-postcss-v2"
   # gem "jekyll-sass-converter"
   # gem "jekyll-purgecss"
 end
