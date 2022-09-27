@@ -37,6 +37,8 @@ jobs:
           npm -v
       - name: Build Dependencies
         run: npm install
+      - name: Build css
+        run: npm run build-css
       - name: Show directory
         run: ls -al
       - name: Setup Pages
