@@ -32,8 +32,9 @@ jobs:
         with:
           node-version: 18
       - name: Show node version
-        run: node -v
-        run: npm -v
+        run: |
+          node -v
+          npm -v
       - name: Build Dependencies
         run: npm install
       - name: Show directory
