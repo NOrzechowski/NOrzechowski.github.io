@@ -14,8 +14,8 @@
     "tailwindcss": "^3.1.8"
   },
   "scripts": {
-    "build-css": "npx tailwindcss -i assets/css/styles.scss  -o assets/styles.css --minify --no-autoprefixer",
-    "serve": "bundle exec jekyll serve --verbose",
+    "build-css": "npx tailwindcss -i assets/css/styles.scss  -o assets/styles.css",
+    "serve": "npm run build-css && bundle exec jekyll serve --verbose",
     "build": "bundle exec jekyll build --verbose"
   }
 }
