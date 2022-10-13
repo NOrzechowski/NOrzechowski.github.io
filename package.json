@@ -25,9 +25,9 @@
     "webpack-cli": "^4.10.0"
   },
   "scripts": {
-    "build-js": "webpack --mode production",
+    "build-js": "webpack --mode development",
     "build-css": "npx tailwindcss -i assets/css/styles.scss  -o assets/bundled/styles.css",
-    "serve": "npm run build-css npm run build-js && bundle exec jekyll serve --verbose",
+    "serve": "npm run build-js && npm run build-css && bundle exec jekyll serve --verbose",
     "build": "bundle exec jekyll build --verbose"
   }
 }
