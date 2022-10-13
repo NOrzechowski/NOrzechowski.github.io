@@ -8,6 +8,7 @@ layout: default
   {%- endif -%}
 
   {{ content }}
+  <div react-component="HelloRender"></div>
 
   {%- if site.posts.size > 0 -%}
     <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
