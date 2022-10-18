@@ -7,19 +7,20 @@ class Header extends Component {
     this.state = {
       showSidebar: false
     }
+    this.setShowSidebar = this.setShowSidebar.bind(this)
   }
 
   setShowSidebar = showSidebar => {
     this.setState({ showSidebar: showSidebar })
   }
 
-  ShowButton ({ showSidebar }) {
+  ShowButton ({ showSidebar, setShowSidebar }) {
     if (showSidebar) {
       return (
         <>
           <button
             className='flex text-4xl text-white items-center cursor-pointer fixed right-10 top-6 z-50'
-            onClick={() => this.setShowSidebar(!showSidebar)}
+            onClick={() => setShowSidebar(!showSidebar)}
           >
             x
           </button>
@@ -28,20 +29,24 @@ class Header extends Component {
     }
   }
 
-  ShowMenuSelector ({ showSidebar }) {
+  ShowMenuSelector ({ showSidebar, setShowSidebar }) {
     if (!showSidebar) {
-      ;<svg
-        onClick={() => this.setShowSidebar(!showSidebar)}
-        className='z-30 flex items-center cursor-pointer right-10 top-6'
-        fill='#2563EB'
-        viewBox='0 0 100 80'
-        width='40'
-        height='40'
-      >
-        <rect width='100' height='10'></rect>
-        <rect y='30' width='100' height='10'></rect>
-        <rect y='60' width='100' height='10'></rect>
-      </svg>
+      return (
+        <>
+          <svg
+            onClick={() => setShowSidebar(!showSidebar)}
+            className='z-30 flex items-center cursor-pointer right-10 top-6'
+            fill='#2563EB'
+            viewBox='0 0 100 80'
+            width='40'
+            height='40'
+          >
+            <rect width='100' height='10'></rect>
+            <rect y='30' width='100' height='10'></rect>
+            <rect y='60' width='100' height='10'></rect>
+          </svg>
+        </>
+      )
     }
   }
 
@@ -49,10 +54,16 @@ class Header extends Component {
     const showSidebar = this.state.showSidebar
     return (
       <>
-        <div class='flex'>
-          <this.ShowButton showSidebar={showSidebar} />
+        <div className='flex'>
+          <this.ShowButton
+            showSidebar={showSidebar}
+            setShowSidebar={this.setShowSidebar}
+          />
           {/* OR: */}
-          <this.ShowMenuSelector showSidebar={showSidebar} />
+          <this.ShowMenuSelector
+            showSidebar={showSidebar}
+            setShowSidebar={this.setShowSidebar}
+          />
           <div
             className={`top-0 right-0 w-[35vw] bg-black p-10 pl-20 text-white fixed h-full z-40 ease-in-out duration-300 ${
               showSidebar ? 'translate-x-0 ' : 'translate-x-full'
