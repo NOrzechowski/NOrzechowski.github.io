@@ -8,7 +8,6 @@ class Header extends Component {
     this.state = {
       showSidebar: false
     }
-    console.log('props yo: ', props)
     this.setShowSidebar = this.setShowSidebar.bind(this)
   }
 
@@ -54,7 +53,6 @@ class Header extends Component {
 
   render () {
     const showSidebar = this.state.showSidebar
-    console.log('inner html: ', this.props.firstDiv.innerHTML)
     return (
       <>
         <div className='absolute'>

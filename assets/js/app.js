@@ -19,9 +19,6 @@ const renderComponents = (componentName, componentClass) => {
       .forEach(el => {
         const props = JSON.parse(el.getAttribute('react-props') || '{}')
         const root = ReactDOM.createRoot(el)
-        console.log(el)
-        console.log(el.getElementsByTagName('div'))
-        console.log('val: ', el.getElementsByTagName('div')[0])
         props['firstDiv'] = el.getElementsByTagName('div')[0]
         root.render(
           React.createElement(
