@@ -1,12 +1,12 @@
-<footer class="site-footer h-card">
+<footer class="site-footer bg-black h-card">
   <data class="u-url" href="{{ "/" | relative_url }}"></data>
 
   <div class="wrapper">
 
     <h2 class="footer-heading">{{ site.title | escape }}</h2>
 
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
+    <div class="flex">
+      <div class="md:w-4/12">
         <ul class="contact-list">
           <li class="p-name">
             {%- if site.author -%}
@@ -21,11 +21,11 @@
         </ul>
       </div>
 
-      <div class="footer-col footer-col-2">
+      <div class="md:w-4/12">
         {%- include social.html -%}
       </div>
 
-      <div class="footer-col footer-col-3">
+      <div class="md:w-4/12">
         <p>{{- site.description | escape -}}</p>
       </div>
     </div>

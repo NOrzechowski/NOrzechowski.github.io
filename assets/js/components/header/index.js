@@ -1,0 +1,70 @@
+import React, { Component } from 'react'
+import { useState } from 'react'
+
+class Header extends Component {
+  constructor () {
+    super()
+    this.state = {
+      showSidebar: false
+    }
+  }
+
+  setShowSidebar = showSidebar => {
+    this.setState({ showSidebar: showSidebar })
+  }
+
+  ShowButton ({ showSidebar }) {
+    if (showSidebar) {
+      return (
+        <>
+          <button
+            className='flex text-4xl text-white items-center cursor-pointer fixed right-10 top-6 z-50'
+            onClick={() => this.setShowSidebar(!showSidebar)}
+          >
+            x
+          </button>
+        </>
+      )
+    }
+  }
+
+  ShowMenuSelector ({ showSidebar }) {
+    if (!showSidebar) {
+      ;<svg
+        onClick={() => this.setShowSidebar(!showSidebar)}
+        className='z-30 flex items-center cursor-pointer right-10 top-6'
+        fill='#2563EB'
+        viewBox='0 0 100 80'
+        width='40'
+        height='40'
+      >
+        <rect width='100' height='10'></rect>
+        <rect y='30' width='100' height='10'></rect>
+        <rect y='60' width='100' height='10'></rect>
+      </svg>
+    }
+  }
+
+  render () {
+    const showSidebar = this.state.showSidebar
+    return (
+      <>
+        <div class='flex'>
+          <this.ShowButton showSidebar={showSidebar} />
+          {/* OR: */}
+          <this.ShowMenuSelector showSidebar={showSidebar} />
+          <div
+            className={`top-0 right-0 w-[35vw] bg-black p-10 pl-20 text-white fixed h-full z-40 ease-in-out duration-300 ${
+              showSidebar ? 'translate-x-0 ' : 'translate-x-full'
+            }`}
+          >
+            <h3 className='mt-20 text-4xl font-semibold text-white'>
+              Sidebar content
+            </h3>
+          </div>
+        </div>
+      </>
+    )
+  }
+}
+export default Header
