@@ -29,5 +29,8 @@
     "build-css": "npx tailwindcss -i assets/css/styles.scss  -o assets/bundled/styles.css",
     "serve": "npm run build-js && npm run build-css && bundle exec jekyll serve --verbose",
     "build": "bundle exec jekyll build --verbose"
+  },
+  "dependencies": {
+    "html-react-parser": "^3.0.4"
   }
 }

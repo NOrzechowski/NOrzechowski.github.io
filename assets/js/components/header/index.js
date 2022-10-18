@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import { useState } from 'react'
+import parse from 'html-react-parser'
 
 class Header extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
     this.state = {
       showSidebar: false
     }
+    console.log('props yo: ', props)
     this.setShowSidebar = this.setShowSidebar.bind(this)
   }
 
@@ -36,7 +38,7 @@ class Header extends Component {
           <svg
             onClick={() => setShowSidebar(!showSidebar)}
             className='z-30 flex items-center cursor-pointer right-10 top-6'
-            fill='#2563EB'
+            fill='#fdfdfd'
             viewBox='0 0 100 80'
             width='40'
             height='40'
@@ -52,28 +54,32 @@ class Header extends Component {
 
   render () {
     const showSidebar = this.state.showSidebar
+    console.log('inner html: ', this.props.firstDiv.innerHTML)
     return (
       <>
-        <div className='flex'>
-          <this.ShowButton
-            showSidebar={showSidebar}
-            setShowSidebar={this.setShowSidebar}
-          />
-          {/* OR: */}
-          <this.ShowMenuSelector
-            showSidebar={showSidebar}
-            setShowSidebar={this.setShowSidebar}
-          />
-          <div
-            className={`top-0 right-0 w-[35vw] bg-black p-10 pl-20 text-white fixed h-full z-40 ease-in-out duration-300 ${
-              showSidebar ? 'translate-x-0 ' : 'translate-x-full'
-            }`}
-          >
-            <h3 className='mt-20 text-4xl font-semibold text-white'>
-              Sidebar content
-            </h3>
+        <div className='absolute'>
+          <div className=''>
+            <this.ShowButton
+              showSidebar={showSidebar}
+              setShowSidebar={this.setShowSidebar}
+            />
+            {/* OR: */}
+            <this.ShowMenuSelector
+              showSidebar={showSidebar}
+              setShowSidebar={this.setShowSidebar}
+            />
+            <div
+              className={`top-0 right-0 w-[35vw] bg-black p-10 pl-20 text-white fixed h-full z-40 ease-in-out duration-300 ${
+                showSidebar ? 'translate-x-0 ' : 'translate-x-full'
+              }`}
+            >
+              <h3 className='mt-20 text-4xl font-semibold text-white'>
+                (feature coming)
+              </h3>
+            </div>
           </div>
         </div>
+        <div className='px-16'>{parse(this.props.firstDiv.innerHTML)}</div>
       </>
     )
   }
