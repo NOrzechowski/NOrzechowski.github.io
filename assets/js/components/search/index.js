@@ -1,7 +1,7 @@
 import React from 'react'
 import Downshift from 'downshift'
 
-const items = [
+const routes = [
   { name: 'About', path: '/about' },
   { name: 'Home', path: '/' },
   { name: 'Resume', path: '/' },
@@ -11,11 +11,18 @@ const items = [
 ]
 
 export default function SearchBar (props) {
+  let filteredRoutes = []
   return (
     <Downshift
-      onChange={selection => props.setSearchBarValue(selection.path, '')}
-      onInputValueChange={value => props.setSearchBarValue('', value.name)}
-      itemToString={item => (item.name ? item.name : '')}
+      onChange={selection => {
+        props.setSearchBarValue(selection.path, '')
+      }}
+      onStateChange={value => {
+        props.setSearchBarValue('', filteredRoutes)
+      }}
+      itemToString={item => {
+        return item && item.name ? item.name : ''
+      }}
     >
       {({
         getInputProps,
@@ -26,29 +33,29 @@ export default function SearchBar (props) {
         inputValue,
         highlightedIndex,
         selectedItem
-      }) => (
-        <div className='m-auto w-full'>
-          <div className='w-full relative'>
-            <input
-              placeholder='Neil Orzechowski (type to explore)'
-              className='w-full placeholder-white placeholder-opacity-75 bg-black'
-              {...getInputProps()}
-              onKeyDown={props._handleKeyDown}
-            />
-            <ul
-              className='absolute w-full rounded bg-slate-800'
-              {...getMenuProps()}
-            >
-              {isOpen
-                ? items
-                    .filter(
-                      item =>
-                        !inputValue ||
-                        item.name
-                          .toLowerCase()
-                          .includes(inputValue.toLowerCase())
-                    )
-                    .map((item, index) => {
+      }) => {
+        filteredRoutes = routes.filter(
+          item =>
+            !inputValue ||
+            item.name.toLowerCase().includes(inputValue.toLowerCase())
+        )
+
+        console.log('filtered routes: ', filteredRoutes)
+        return (
+          <div className='m-auto w-full'>
+            <div className='w-full relative'>
+              <input
+                placeholder='Neil Orzechowski (type to explore)'
+                className='w-full placeholder-white placeholder-opacity-75 bg-black'
+                {...getInputProps()}
+                onKeyDown={props._handleKeyDown}
+              />
+              <ul
+                className='absolute w-full rounded bg-slate-800'
+                {...getMenuProps()}
+              >
+                {isOpen
+                  ? filteredRoutes.map((item, index) => {
                       console.log('item yo: ', item)
                       const name = item.name
                       return (
@@ -68,11 +75,12 @@ export default function SearchBar (props) {
                         </li>
                       )
                     })
-                : null}
-            </ul>
+                  : null}
+              </ul>
+            </div>
           </div>
-        </div>
-      )}
+        )
+      }}
     </Downshift>
   )
 }

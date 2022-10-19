@@ -17,9 +17,12 @@ class Header extends Component {
     this.setSearchBarValue = this.setSearchBarValue.bind(this)
   }
 
-  setSearchBarValue = (val, topValue) => {
+  setSearchBarValue = (val, filteredValues) => {
     console.log('changing value: ', val)
     this.setState({ searchBarValue: val })
+    if (filteredValues) {
+      this.setState({ topValue: filteredValues[0].path })
+    }
   }
 
   _handleKeyDown = e => {
@@ -31,6 +34,8 @@ class Header extends Component {
     if (e.key === 'Tab') {
       e.preventDefault()
       console.log('tab key pressed')
+      if (this.state.topValue)
+        window.location.href = this.state.topValue.toLowerCase()
     }
   }
 
