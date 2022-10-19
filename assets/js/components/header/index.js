@@ -7,9 +7,31 @@ class Header extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      showSidebar: false
+      showSidebar: false,
+      searchBarValue: false,
+      topValue: false
     }
+    console.log('props: ', props)
     this.setShowSidebar = this.setShowSidebar.bind(this)
+    this._handleKeyDown = this._handleKeyDown.bind(this)
+    this.setSearchBarValue = this.setSearchBarValue.bind(this)
+  }
+
+  setSearchBarValue = (val, topValue) => {
+    console.log('changing value: ', val)
+    this.setState({ searchBarValue: val })
+  }
+
+  _handleKeyDown = e => {
+    if (e.key === 'Enter') {
+      console.log('enter key pressed')
+      if (this.state.searchBarValue)
+        window.location.href = this.state.searchBarValue.toLowerCase()
+    }
+    if (e.key === 'Tab') {
+      e.preventDefault()
+      console.log('tab key pressed')
+    }
   }
 
   setShowSidebar = showSidebar => {
@@ -86,7 +108,10 @@ class Header extends Component {
             </div>
           </div>
           <div className='md:w-3/12 mr-5'>
-            <SearchBar />
+            <SearchBar
+              _handleKeyDown={this._handleKeyDown}
+              setSearchBarValue={this.setSearchBarValue}
+            />
           </div>
           <div className='md:w-8/12'>
             <div className=''>{parse(this.props.firstDiv.innerHTML)}</div>
@@ -96,4 +121,5 @@ class Header extends Component {
     )
   }
 }
+
 export default Header

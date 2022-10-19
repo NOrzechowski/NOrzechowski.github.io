@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { render } from 'react-dom'
 var ReactDOM = require('react-dom/client')
 
-import Header from './components/header/index'
+import HeaderWithNavigate from './components/header/index'
 
 function ready (fn) {
   if (document.readyState != 'loading') {
@@ -31,4 +31,4 @@ const renderComponents = (componentName, componentClass) => {
   })
 }
 
-renderComponents('HeaderRender', Header)
+renderComponents('HeaderRender', HeaderWithNavigate)

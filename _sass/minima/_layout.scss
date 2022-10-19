@@ -2,9 +2,9 @@
  * Site header
  */
 
- .this-is-a-silly-little-class {
-  border-top: 5px solid $grey-color-dark;
- }
+ input:focus{
+  outline: none;
+}
 
 .site-header {
   border-top: 1px solid $grey-color-light;
