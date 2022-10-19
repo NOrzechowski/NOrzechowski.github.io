@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { useState } from 'react'
 import parse from 'html-react-parser'
+import SearchBar from '../search/index.js'
 
 class Header extends Component {
   constructor (props) {
@@ -32,6 +33,7 @@ class Header extends Component {
 
   ShowMenuSelector ({ showSidebar, setShowSidebar }) {
     if (!showSidebar) {
+      // TODO: add a helpful tooltip indicating what this does.
       return (
         <>
           <svg
@@ -41,6 +43,7 @@ class Header extends Component {
             xmlns='http://www.w3.org/2000/svg'
             onClick={() => setShowSidebar(!showSidebar)}
             className='z-30 flex items-center cursor-pointer right-10 top-6'
+            title='Click for menu/help'
           >
             <path
               fill='none'
@@ -59,7 +62,7 @@ class Header extends Component {
     return (
       <>
         <div className='flex pt-2'>
-          <div className='pr-1'>
+          <div className=''>
             <div className='ml-1 pl-1'>
               <this.ShowButton
                 showSidebar={showSidebar}
@@ -82,7 +85,10 @@ class Header extends Component {
               </div>
             </div>
           </div>
-          <div className='md:w-11/12'>
+          <div className='md:w-3/12 mr-5'>
+            <SearchBar />
+          </div>
+          <div className='md:w-8/12'>
             <div className=''>{parse(this.props.firstDiv.innerHTML)}</div>
           </div>
         </div>
