@@ -2,8 +2,8 @@ import React from 'react'
 import Downshift from 'downshift'
 
 const routes = [
-  { name: 'About', path: '/about' },
-  { name: 'Home', path: '/' },
+  { name: 'About', path: '/about/' },
+  { name: 'Home', path: '/', displayValue: 'Neil Orzechowski' },
   { name: 'Resume', path: '/' },
   { name: 'Sky Dive', path: '/' },
   { name: 'Blog', path: '/' },
@@ -12,6 +12,8 @@ const routes = [
 
 export default function SearchBar (props) {
   let filteredRoutes = []
+  const currentRoute = routes.find(el => el.path == props.currentPath)
+  const currentDisplay = currentRoute?.displayValue || currentRoute?.name
   return (
     <Downshift
       onChange={selection => {
@@ -39,13 +41,11 @@ export default function SearchBar (props) {
             !inputValue ||
             item.name.toLowerCase().includes(inputValue.toLowerCase())
         )
-
-        console.log('filtered routes: ', filteredRoutes)
         return (
           <div className='m-auto w-full'>
             <div className='w-full relative'>
               <input
-                placeholder='Neil Orzechowski (type to explore)'
+                placeholder={currentDisplay + ' (type to explore)'}
                 className='w-full placeholder-white placeholder-opacity-75 bg-black'
                 {...getInputProps()}
                 onKeyDown={props._handleKeyDown}
