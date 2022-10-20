@@ -5,7 +5,7 @@ const routes = [
   { name: 'About', path: '/about/' },
   { name: 'Home', path: '/', displayValue: 'Neil Orzechowski' },
   { name: 'Resume', path: '/' },
-  { name: 'Sky Dive', path: '/' },
+  { name: 'Bungee Jump', path: '/' },
   { name: 'Blog', path: '/' },
   { name: 'food', path: '/' }
 ]
@@ -56,7 +56,6 @@ export default function SearchBar (props) {
               >
                 {isOpen
                   ? filteredRoutes.map((item, index) => {
-                      console.log('item yo: ', item)
                       const name = item.name
                       return (
                         <li

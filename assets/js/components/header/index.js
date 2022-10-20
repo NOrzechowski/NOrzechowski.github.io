@@ -4,6 +4,7 @@ import parse from 'html-react-parser'
 import SearchBar from '../search/index.js'
 
 class Header extends Component {
+  // TODO: need to go back through and test on a mobile browser screen
   constructor (props) {
     super(props)
     this.state = {
@@ -56,29 +57,27 @@ class Header extends Component {
   }
 
   ShowMenuSelector ({ showSidebar, setShowSidebar }) {
-    if (!showSidebar) {
-      // TODO: add a helpful tooltip indicating what this does.
-      return (
-        <>
-          <svg
-            width='40px'
-            height='28px'
-            viewBox='0 0 25 25'
-            xmlns='http://www.w3.org/2000/svg'
-            onClick={() => setShowSidebar(!showSidebar)}
-            className='z-30 flex items-center cursor-pointer right-10 top-6'
-            title='Click for menu/help'
-          >
-            <path
-              fill='none'
-              stroke='#fdfdfd'
-              stroke-width='3'
-              d='M2,5 L8,11 L2,17 M9,17 L23,17'
-            />
-          </svg>
-        </>
-      )
-    }
+    // TODO: add a helpful tooltip indicating what this does.
+    return (
+      <>
+        <svg
+          width='40px'
+          height='28px'
+          viewBox='0 0 25 25'
+          xmlns='http://www.w3.org/2000/svg'
+          onClick={() => setShowSidebar(!showSidebar)}
+          className='z-30 flex items-center cursor-help right-10 top-6'
+          title='Click for menu/help'
+        >
+          <path
+            fill='none'
+            stroke='#fdfdfd'
+            stroke-width='3'
+            d='M2,5 L8,11 L2,17 M9,17 L23,17'
+          />
+        </svg>
+      </>
+    )
   }
 
   render () {
@@ -102,13 +101,19 @@ class Header extends Component {
               />
               {/* Slide out: */}
               <div
-                className={`top-0 right-0 w-[35vw] bg-black p-10 pl-20 text-white fixed h-full z-40 ease-in-out duration-300 ${
-                  showSidebar ? 'translate-x-0 ' : 'translate-x-full'
+                className={`top-0 left-0 w-full bg-black/75 text-white fixed h-28 z-40 ease-in-out duration-300 ${
+                  showSidebar ? 'translate-x-0 ' : '-translate-y-full'
                 }`}
               >
-                <h3 className='mt-20 text-4xl font-semibold text-white'>
-                  (feature coming)
-                </h3>
+                <div className='flex pt-2'>
+                  <div className='md:w-full mr-5'>
+                    <div className='text-white'>
+                      Start typing to see navigable options within the site. To
+                      autocomplete what you're typing, press "Tab". Or: click
+                      the option then press "Enter"
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
