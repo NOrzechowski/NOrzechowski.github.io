@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<div class="">
+  <div class="pb-2">
+    <div class="w-full text-black font-bold font-xl">
+      ./ ls -al
+    </div>
+    <div class="w-full text-black italic font-xl">
+      -rw-r--r--@ 1 user 112233 {{ site.time | date: '%h %d %H:%M ' }} {{
+      page.title | escape }}
+    </div>
+    <div class="w-full text-black font-bold font-xl">
+      ./ cat {{ page.title | escape }}
+    </div>
+  </div>
+  <div class="flex w-full">
+    <img src="{{ page.img_url | relative_url }}" />
+  </div>
+  <div class="flex w-full">
+    <div class="text-black">
+      {{ content }}
+    </div>
+  </div>
+</div>
