@@ -21,10 +21,10 @@ export default function SearchBar (props) {
     <Downshift
       inputValue={inputValue}
       onChange={selection => {
-        props.setSearchBarValue(selection, '')
+        props.valueSelected(selection)
       }}
       onStateChange={(changes, stateAndHelpers) => {
-        props.setSearchBarValue('', filteredRoutes)
+        props.setSearchBarValue(filteredRoutes)
 
         if (changes.hasOwnProperty('inputValue')) {
           setInputValue(changes.inputValue)

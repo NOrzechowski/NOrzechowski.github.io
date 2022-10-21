@@ -5,22 +5,28 @@ import SearchBar from '../search/index.js'
 
 class Header extends Component {
   // TODO: need to go back through and test on a mobile browser screen
-  // home screen idea: map (perhaps spiraling wit connected "wires") that shows my past experience and journey
+  // home screen idea: map (perhaps spiraling with connected "wires") that shows my past experience and journey
   constructor (props) {
     super(props)
     this.state = {
       showSidebar: false,
-      searchBarValue: false,
       topValue: false
     }
 
     this.setShowSidebar = this.setShowSidebar.bind(this)
     this._handleKeyDown = this._handleKeyDown.bind(this)
     this.setSearchBarValue = this.setSearchBarValue.bind(this)
+    this.valueSelected = this.valueSelected.bind(this)
   }
 
-  setSearchBarValue = (val, filteredValues) => {
-    this.setState({ searchBarValue: val })
+  valueSelected = selection => {
+    if (selection?.path) {
+      var base_url = window.location.origin
+      window.location.href = base_url + selection.path.toLowerCase()
+    }
+  }
+
+  setSearchBarValue = filteredValues => {
     if (filteredValues && filteredValues[0]) {
       this.setState({ topValue: filteredValues[0] })
     }
@@ -28,9 +34,9 @@ class Header extends Component {
 
   _handleKeyDown = (e, setValueCallback) => {
     if (e.key === 'Enter') {
-      if (this.state.topValue?.name) {
-        //TODO: make sure this doesn't just append to existing path
-        window.location.href = this.state.topValue.name.toLowerCase()
+      if (this.state.topValue?.path) {
+        var base_url = window.location.origin
+        window.location.href = base_url + this.state.topValue.path.toLowerCase()
       }
     }
     if (e.key === 'Tab') {
@@ -76,7 +82,7 @@ class Header extends Component {
           <path
             fill='none'
             stroke='#fdfdfd'
-            stroke-width='3'
+            strokeWidth='3'
             d='M2,5 L8,11 L2,17 M9,17 L23,17'
           />
         </svg>
@@ -125,6 +131,7 @@ class Header extends Component {
             <SearchBar
               _handleKeyDown={this._handleKeyDown}
               setSearchBarValue={this.setSearchBarValue}
+              valueSelected={this.valueSelected}
               currentPath={pathname}
             />
           </div>
