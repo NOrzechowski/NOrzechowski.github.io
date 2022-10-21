@@ -2,7 +2,7 @@
   <data class="u-url" href="{{ "/" | relative_url }}"></data>
 
     <div class="flex w-full">
-      <div class="md:w-3/12 flex justify-center">
+      <div class="w-5/12 md:w-3/12 flex justify-center">
         <ul class="contact-list">
           <li class="p-name">
             {%- if site.author -%}
@@ -17,11 +17,11 @@
         </ul>
       </div>
 
-      <div class="md:w-6/12 flex justify-center">
+      <div class="w-5/12 md:w-6/12 flex justify-center">
         {%- include social.html -%}
       </div>
 
-      <div class="md:w-3/12 flex justify-center">
+      <div class="w-2/12 md:w-3/12 flex justify-center">
         <p>{{- site.description | escape -}}</p>
       </div>
     </div>

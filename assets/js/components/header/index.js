@@ -124,7 +124,7 @@ class Header extends Component {
               </div>
             </div>
           </div>
-          <div className='w-6/12'>
+          <div className='w-10/12 md:w-6/12'>
             <SearchBar
               _handleKeyDown={this._handleKeyDown}
               setSearchBarValue={this.setSearchBarValue}
@@ -132,8 +132,8 @@ class Header extends Component {
               currentPath={pathname}
             />
           </div>
-          <div className='w-6/12'>
-            <div className='flex justify-end pr-10'>
+          <div className='w-2/12 md:w-6/12'>
+            <div className='flex justify-end pr-5 md:pr:10'>
               {parse(this.props.firstDiv.innerHTML)}
             </div>
           </div>
