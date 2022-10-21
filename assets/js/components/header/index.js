@@ -92,7 +92,7 @@ class Header extends Component {
               />
               {/* Slide out: */}
               <div
-                className={`top-0 left-1/4 w-1/2 bg-black/75 text-white fixed h-28 z-40 ease-in-out duration-300 ${
+                className={`top-0 left-1/4 w-1/2 bg-black/75 text-white fixed h-1/8 z-40 ease-in-out duration-300 ${
                   showSidebar ? 'translate-x-0 ' : '-translate-y-full'
                 }`}
               >
@@ -103,7 +103,7 @@ class Header extends Component {
                     terminal, or you can click with your mouse. Have fun!
                   </div>
                 </div>
-                <div className='md:w-full mt-5'>
+                <div className='md:w-full pt-5 mb-1 pb-1'>
                   <div className='flex justify-center'>
                     <svg
                       onClick={() => this.setShowSidebar(!showSidebar)}
@@ -124,7 +124,7 @@ class Header extends Component {
               </div>
             </div>
           </div>
-          <div className='md:w-3/12 mr-5'>
+          <div className='w-6/12'>
             <SearchBar
               _handleKeyDown={this._handleKeyDown}
               setSearchBarValue={this.setSearchBarValue}
@@ -132,8 +132,10 @@ class Header extends Component {
               currentPath={pathname}
             />
           </div>
-          <div className='md:w-8/12'>
-            <div className=''>{parse(this.props.firstDiv.innerHTML)}</div>
+          <div className='w-6/12'>
+            <div className='flex justify-end pr-10'>
+              {parse(this.props.firstDiv.innerHTML)}
+            </div>
           </div>
         </div>
       </>
