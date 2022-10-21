@@ -24,15 +24,15 @@ export default function SearchBar (props) {
         props.valueSelected(selection)
       }}
       onStateChange={(changes, stateAndHelpers) => {
-        const filteredItems = routes.filter(
-          item =>
-            !changes.inputValue ||
-            item.name.toLowerCase().includes(changes.inputValue.toLowerCase())
-        )
-        setFilteredRoutes(filteredItems)
-        props.setSearchBarValue(filteredItems)
-
         if (changes.hasOwnProperty('inputValue')) {
+          const filteredItems = routes.filter(
+            item =>
+              !changes.inputValue ||
+              item.name.toLowerCase().includes(changes.inputValue.toLowerCase())
+          )
+          setFilteredRoutes(filteredItems)
+          props.setSearchBarValue(filteredItems)
+
           setInputValue(changes.inputValue)
         }
       }}
