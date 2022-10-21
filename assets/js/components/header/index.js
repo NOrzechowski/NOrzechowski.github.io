@@ -40,6 +40,7 @@ class Header extends Component {
       }
     }
     if (e.key === 'Tab') {
+      //TODO: iterate through options when pressed multiple times in a row
       e.preventDefault()
       if (this.state.topValue) {
         setValueCallback(this.state.topValue.name)

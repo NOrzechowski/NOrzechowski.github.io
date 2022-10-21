@@ -13,10 +13,10 @@ const routes = [
 
 export default function SearchBar (props) {
   const [inputValue, setInputValue] = useState('')
-
-  let filteredRoutes = []
+  const [filteredRoutes, setFilteredRoutes] = useState([])
   const currentRoute = routes.find(el => el.path == props.currentPath)
   const currentDisplay = currentRoute?.displayValue || currentRoute?.name
+
   return (
     <Downshift
       inputValue={inputValue}
@@ -24,7 +24,13 @@ export default function SearchBar (props) {
         props.valueSelected(selection)
       }}
       onStateChange={(changes, stateAndHelpers) => {
-        props.setSearchBarValue(filteredRoutes)
+        const filteredItems = routes.filter(
+          item =>
+            !changes.inputValue ||
+            item.name.toLowerCase().includes(changes.inputValue.toLowerCase())
+        )
+        setFilteredRoutes(filteredItems)
+        props.setSearchBarValue(filteredItems)
 
         if (changes.hasOwnProperty('inputValue')) {
           setInputValue(changes.inputValue)
@@ -44,11 +50,6 @@ export default function SearchBar (props) {
         highlightedIndex,
         selectedItem
       }) => {
-        filteredRoutes = routes.filter(
-          item =>
-            !inputValue ||
-            item.name.toLowerCase().includes(inputValue.toLowerCase())
-        )
         return (
           <div className='m-auto w-full'>
             <div className='w-full relative'>
