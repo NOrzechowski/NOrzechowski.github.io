@@ -52,21 +52,6 @@ class Header extends Component {
     this.setState({ showSidebar: showSidebar })
   }
 
-  ShowButton ({ showSidebar, setShowSidebar }) {
-    if (showSidebar) {
-      return (
-        <>
-          <button
-            className='flex text-4xl text-white items-center cursor-pointer fixed right-10 top-6 z-50'
-            onClick={() => setShowSidebar(!showSidebar)}
-          >
-            x
-          </button>
-        </>
-      )
-    }
-  }
-
   ShowMenuSelector ({ showSidebar, setShowSidebar }) {
     // TODO: add a helpful tooltip indicating what this does.
     return (
@@ -101,28 +86,39 @@ class Header extends Component {
         <div className='flex pt-2'>
           <div className=''>
             <div className='ml-1 pl-1'>
-              <this.ShowButton
-                showSidebar={showSidebar}
-                setShowSidebar={this.setShowSidebar}
-              />
-              {/* OR: */}
               <this.ShowMenuSelector
                 showSidebar={showSidebar}
                 setShowSidebar={this.setShowSidebar}
               />
               {/* Slide out: */}
               <div
-                className={`top-0 left-0 w-full bg-black/75 text-white fixed h-28 z-40 ease-in-out duration-300 ${
+                className={`top-0 left-1/4 w-1/2 bg-black/75 text-white fixed h-28 z-40 ease-in-out duration-300 ${
                   showSidebar ? 'translate-x-0 ' : '-translate-y-full'
                 }`}
               >
-                <div className='flex pt-2'>
-                  <div className='md:w-full mr-5'>
-                    <div className='text-white'>
-                      Start typing to see navigable options within the site. You
-                      can use "tab" and "enter" like you would in a normal
-                      terminal, or you can click with your mouse.
-                    </div>
+                <div className='md:w-full px-2 pt-2'>
+                  <div className='text-sky-600'>
+                    Start typing to see navigable options within the site. You
+                    can use "tab" and "enter" like you would in a normal
+                    terminal, or you can click with your mouse. Have fun!
+                  </div>
+                </div>
+                <div className='md:w-full mt-5'>
+                  <div className='flex justify-center'>
+                    <svg
+                      onClick={() => this.setShowSidebar(!showSidebar)}
+                      width='50'
+                      height='25'
+                      viewBox='0 0 20 10'
+                      strokWidth='3'
+                      className='cursor-pointer'
+                    >
+                      <path
+                        fillRule='evenodd'
+                        fill='white'
+                        d='M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z'
+                      />
+                    </svg>
                   </div>
                 </div>
               </div>

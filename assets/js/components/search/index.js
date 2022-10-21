@@ -64,7 +64,7 @@ export default function SearchBar (props) {
               />
 
               <ul
-                className='absolute w-full rounded bg-slate-800'
+                className='absolute w-full rounded bg-slate-800/75'
                 {...getMenuProps()}
               >
                 {isOpen
@@ -78,7 +78,7 @@ export default function SearchBar (props) {
                             item,
                             className: `w-full py-2 px-2 text-white ${
                               highlightedIndex === index
-                                ? 'bg-slate-800 text-white font-bold'
+                                ? 'bg-slate-800/75 text-white font-bold'
                                 : 'bg-gray-800'
                             }`
                           })}
