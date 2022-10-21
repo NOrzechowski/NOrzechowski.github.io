@@ -1,15 +1,7 @@
 import React from 'react'
 import Downshift from 'downshift'
 import { useState } from 'react'
-
-const routes = [
-  { name: 'About', path: '/about/' },
-  { name: 'Home', path: '/', displayValue: 'Neil Orzechowski' },
-  { name: 'Resume', path: '/' },
-  { name: 'Bungee Jump', path: '/' },
-  { name: 'Blog', path: '/' },
-  { name: 'food', path: '/' }
-]
+import { routes } from './routes'
 
 export default function SearchBar (props) {
   const [inputValue, setInputValue] = useState('')
@@ -76,7 +68,7 @@ export default function SearchBar (props) {
                             key: name,
                             index,
                             item,
-                            className: `w-full py-2 px-2 text-white ${
+                            className: `w-full cursor-pointer py-2 px-2 text-white ${
                               highlightedIndex === index
                                 ? 'bg-slate-800/75 text-white font-bold'
                                 : 'bg-gray-800'
