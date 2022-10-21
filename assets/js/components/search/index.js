@@ -1,5 +1,6 @@
 import React from 'react'
 import Downshift from 'downshift'
+import { useState } from 'react'
 
 const routes = [
   { name: 'About', path: '/about/' },
@@ -11,16 +12,23 @@ const routes = [
 ]
 
 export default function SearchBar (props) {
+  const [inputValue, setInputValue] = useState('')
+
   let filteredRoutes = []
   const currentRoute = routes.find(el => el.path == props.currentPath)
   const currentDisplay = currentRoute?.displayValue || currentRoute?.name
   return (
     <Downshift
+      inputValue={inputValue}
       onChange={selection => {
-        props.setSearchBarValue(selection.path, '')
+        props.setSearchBarValue(selection, '')
       }}
-      onStateChange={value => {
+      onStateChange={(changes, stateAndHelpers) => {
         props.setSearchBarValue('', filteredRoutes)
+
+        if (changes.hasOwnProperty('inputValue')) {
+          setInputValue(changes.inputValue)
+        }
       }}
       itemToString={item => {
         return item && item.name ? item.name : ''
@@ -45,11 +53,15 @@ export default function SearchBar (props) {
           <div className='m-auto w-full'>
             <div className='w-full relative'>
               <input
+                {...getInputProps({
+                  onKeyDown: event => {
+                    props._handleKeyDown(event, setInputValue)
+                  }
+                })}
                 placeholder={currentDisplay + ' (type to explore)'}
                 className='w-full placeholder-white placeholder-opacity-75 bg-black'
-                {...getInputProps()}
-                onKeyDown={props._handleKeyDown}
               />
+
               <ul
                 className='absolute w-full rounded bg-slate-800'
                 {...getMenuProps()}

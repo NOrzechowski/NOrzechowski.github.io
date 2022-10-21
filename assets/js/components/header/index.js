@@ -5,6 +5,7 @@ import SearchBar from '../search/index.js'
 
 class Header extends Component {
   // TODO: need to go back through and test on a mobile browser screen
+  // home screen idea: map (perhaps spiraling wit connected "wires") that shows my past experience and journey
   constructor (props) {
     super(props)
     this.state = {
@@ -21,19 +22,22 @@ class Header extends Component {
   setSearchBarValue = (val, filteredValues) => {
     this.setState({ searchBarValue: val })
     if (filteredValues && filteredValues[0]) {
-      this.setState({ topValue: filteredValues[0].path })
+      this.setState({ topValue: filteredValues[0] })
     }
   }
 
-  _handleKeyDown = e => {
+  _handleKeyDown = (e, setValueCallback) => {
     if (e.key === 'Enter') {
-      if (this.state.searchBarValue)
-        window.location.href = this.state.searchBarValue.toLowerCase()
+      if (this.state.topValue?.name) {
+        //TODO: make sure this doesn't just append to existing path
+        window.location.href = this.state.topValue.name.toLowerCase()
+      }
     }
     if (e.key === 'Tab') {
       e.preventDefault()
-      if (this.state.topValue)
-        window.location.href = this.state.topValue.toLowerCase()
+      if (this.state.topValue) {
+        setValueCallback(this.state.topValue.name)
+      }
     }
   }
 
@@ -108,9 +112,9 @@ class Header extends Component {
                 <div className='flex pt-2'>
                   <div className='md:w-full mr-5'>
                     <div className='text-white'>
-                      Start typing to see navigable options within the site. To
-                      autocomplete what you're typing, press "Tab". Or: click
-                      the option then press "Enter"
+                      Start typing to see navigable options within the site. You
+                      can use "tab" and "enter" like you would in a normal
+                      terminal, or you can click with your mouse.
                     </div>
                   </div>
                 </div>
