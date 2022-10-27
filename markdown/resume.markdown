@@ -2,6 +2,7 @@
 layout: page
 title: Resume
 permalink: /resume/
+download_path: /assets/static/NeilOrzechowski.pdf
 ---
 
 <!-- This file content is generated using pandoc, e.g.: pandoc -f docx -t gfm resume.docx -o resume-content.md  -->
