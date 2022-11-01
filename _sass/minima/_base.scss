@@ -241,8 +241,6 @@ pre {
   }
 }
 
-
-
 /**
  * Tables
  */
@@ -270,3 +268,146 @@ table {
     border: 1px solid $grey-color-light;
   }
 }
+
+/**
+ * Terminal (borrowed from: https://codeeverywhere.ca/post.php?id=10)
+ */
+
+ * { margin: 0; padding: 0; }
+ .terminal {
+     border-radius: 5px 5px 0 0;
+     position: relative;
+ }
+ .terminal .top {
+     background: #E8E6E8;
+     color: black;
+     padding: 5px;
+     border-radius: 5px 5px 0 0;
+ }
+ .terminal .btns {
+     position: absolute;
+     top: 7px;
+     left: 5px;
+     position: absolute;
+     display: flex;
+ }
+
+ .title{
+     text-align: center;
+ }
+
+ .clear{clear: both;}
+ .terminal .body {
+     background: black;
+     color: #7AFB4C;
+     padding: 8px;
+     overflow: auto;
+     height: 100%;
+ }
+ .space {
+     margin: 25px;
+ }
+ .shadow { box-shadow: 0px 0px 10px rgba(0,0,0,.4)}
+
+ /**
+ * Terminal icons, borrowed from https://codepen.io/dev_loop/pen/rRrroJ
+ */
+
+.terminalIcon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border-radius: 15px;
+  margin-left: 2px;
+  border-width: 1px;
+  border-style: solid;
+}
+.minimize {
+	background: #fac536;
+	position: relative;
+	overflow: hidden;
+}
+.minimize::before{
+	content: '';
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 50%;
+	height: 10%;
+	opacity: 0;
+	background: #222;
+	transition: 300ms;
+}
+.minimize:hover::before{
+	opacity: 1;
+	top: 50%;
+}
+.maximize{
+	background: #39ea49;
+	position: relative;
+	overflow: hidden;
+}
+.maximize::before{
+	content: '';
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 45%;
+	height: 45%;
+	opacity: 0;
+	background: #222;
+	transition: 300ms;
+}
+.maximize::after{
+	content: '';
+	position: absolute;
+	top: 80%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(-45deg);
+	width: 15%;
+	height: 80%;
+	opacity: 0;
+	background: #39ea49;
+	transition: 300ms;
+}
+.maximize:hover::before, .maximize:hover::after{
+	opacity: 1;
+	top: 50%;
+}
+.close {
+	background: #f25056;
+	position: relative;
+	overflow: hidden;
+}
+.close::before{
+	content: '';
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(-45deg);
+	width: 15%;
+	height: 50%;
+	opacity: 0;
+	background: #222;
+	transition: 300ms;
+}
+.close::after{
+	content: '';
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(45deg);
+	width: 15%;
+	opacity: 0;
+	height: 50%;
+	background: #222;
+	transition: 300ms;
+}
+.close:hover::before, .close:hover::after{
+	opacity: 1;
+	top: 50%;
+}
+
+

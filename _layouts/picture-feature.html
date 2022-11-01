@@ -15,8 +15,8 @@ layout: default
       ./ cat {{ page.title | escape }}
     </div>
   </div>
-  <div class="flex w-full">
-    <img src="{{ page.img_url | relative_url }}" />
+  <div class="flex xs:w-full lg:w-1/2 h-1/2 flex-shrink-0">
+    <img class="object-fit" src="{{ page.img_url | relative_url }}" />
   </div>
   <div class="flex w-full">
     <div class="text-black">

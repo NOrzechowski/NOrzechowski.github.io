@@ -97,7 +97,7 @@ class Header extends Component {
                 }`}
               >
                 <div className='md:w-full px-2 pt-2'>
-                  <div className='text-sky-600'>
+                  <div className='text-terminal'>
                     Start typing to see navigable options within the site. You
                     can use "tab" and "enter" like you would in a normal
                     terminal, or you can click with your mouse. Have fun!

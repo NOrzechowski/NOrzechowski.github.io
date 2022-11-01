@@ -7,5 +7,6 @@ export const routes = [
   { name: 'Resume', path: '/resume/' },
   { name: 'Bungee Jump', path: '/bungee/' },
   { name: 'Blog', path: '/blog/' },
-  { name: 'Food', path: '/food/' }
+  { name: 'Food', path: '/food/' },
+  { name: 'Headshot', path: '/headshot/' }
 ]

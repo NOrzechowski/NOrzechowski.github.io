@@ -7,7 +7,11 @@ module.exports = {
   ],
   darkMode: false,
   theme: {
-    extend: {}
+    extend: {
+      colors: {
+        terminal: '#7AFB4C'
+      }
+    }
   },
   variants: {},
   plugins: [require('@tailwindcss/typography')]

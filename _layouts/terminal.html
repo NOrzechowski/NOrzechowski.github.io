@@ -1,0 +1,75 @@
+---
+layout: default
+---
+
+<div class="h-screen">
+  {%- if page.title -%}
+  <h1 class="page-heading border-solid">{{ page.title }}</h1>
+  {%- endif -%}
+
+  <div class="terminal space shadow h-1/2">
+    <div class="top">
+      <div class="btns">
+        <span class="terminalIcon close"></span>
+        <span class="terminalIcon minimize"></span>
+        <span class="terminalIcon maximize"></span>
+      </div>
+      <div class="title">zsh -- 70x32</div>
+    </div>
+    <pre class="body">
+      {{ content }}
+    </pre>
+  </div>
+
+  <!-- <div class="flex w-full outline outline-2 h-24 min-h-full">
+    <div class="md:w-3/12 outline outline-2 group/item hover:bg-slate-100">
+      <a
+        class="group/edit invisible hover:bg-slate-200 group-hover/item:visible"
+        href="#"
+      >
+        <span class="group-hover/edit:text-black">Learn More</span>
+      </a>
+    </div>
+    <div class="md:w-3/12 outline outline-2"></div>
+    <div class="md:w-3/12 outline outline-2"></div>
+    <div class="md:w-3/12 outline outline-2"></div>
+  </div>
+  <div class="flex w-full outline outline-2 h-24 min-h-full">
+    <div class="md:w-3/12 outline outline-2"></div>
+    <div class="md:w-3/12 outline outline-2"></div>
+    <div class="md:w-3/12 outline outline-2"></div>
+    <div class="md:w-3/12 outline outline-2"></div>
+  </div>
+  <div class="flex w-full outline outline-2 h-24 min-h-full">
+    <div class="md:w-3/12 outline outline-2"></div>
+    <div class="md:w-3/12 outline outline-2"></div>
+    <div class="md:w-3/12 outline outline-2"></div>
+    <div class="md:w-3/12 outline outline-2"></div>
+  </div>
+  <div class="flex w-full outline outline-2 h-24 min-h-full">
+    <div class="md:w-3/12 outline outline-2"></div>
+    <div class="md:w-3/12 outline outline-2"></div>
+    <div class="md:w-3/12 outline outline-2"></div>
+    <div class="md:w-3/12 outline outline-2"></div>
+  </div> -->
+
+  <!-- {%- if site.posts.size > 0 -%}
+    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+    <ul class="post-list">
+      {%- for post in site.posts -%}
+      <li>
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <span class="post-meta">{{ post.date | date: date_format }}</span>
+        <h3>
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+        </h3>
+        {%- if site.show_excerpts -%}
+          {{ post.excerpt }}
+        {%- endif -%}
+      </li>
+      {%- endfor -%}
+    </ul>
+  {%- endif -%} -->
+</div>

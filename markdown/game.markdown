@@ -1,4 +1,0 @@
----
-layout: game
-permalink: /game
----
