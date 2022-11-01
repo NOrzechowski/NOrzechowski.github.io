@@ -44,7 +44,7 @@ export default function SearchBar (props) {
       }) => {
         return (
           <div className='m-auto w-full'>
-            <div className='w-full relative'>
+            <div className='w-full relative z-30'>
               <input
                 {...getInputProps({
                   onKeyDown: event => {

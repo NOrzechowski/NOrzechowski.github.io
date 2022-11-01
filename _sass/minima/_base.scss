@@ -273,7 +273,6 @@ table {
  * Terminal (borrowed from: https://codeeverywhere.ca/post.php?id=10)
  */
 
- * { margin: 0; padding: 0; }
  .terminal {
      border-radius: 5px 5px 0 0;
      position: relative;
@@ -284,7 +283,7 @@ table {
      padding: 5px;
      border-radius: 5px 5px 0 0;
  }
- .terminal .btns {
+ .terminal .icons {
      position: absolute;
      top: 7px;
      left: 5px;
@@ -313,7 +312,7 @@ table {
  * Terminal icons, borrowed from https://codepen.io/dev_loop/pen/rRrroJ
  */
 
-.terminalIcon {
+.terminal-icon {
   width: 20px;
   height: 20px;
   display: inline-block;
