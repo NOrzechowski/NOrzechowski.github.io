@@ -1,5 +1,6 @@
 ---
 layout: terminal
+title: About
 permalink: /about/
 ---
 
