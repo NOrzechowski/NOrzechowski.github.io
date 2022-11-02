@@ -8,6 +8,9 @@ module.exports = {
   darkMode: false,
   theme: {
     extend: {
+      minHeight: {
+        '96': '24rem'
+      },
       colors: {
         terminal: '#7AFB4C'
       }
