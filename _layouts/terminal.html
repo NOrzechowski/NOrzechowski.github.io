@@ -2,12 +2,12 @@
 layout: default
 ---
 
-<div class="h-screen">
+<div class="">
   {%- if page.title -%}
   <!-- <h1 class="page-heading border-solid">{{ page.title }}</h1> -->
   {%- endif -%}
 
-  <div class="terminal space shadow h-1/2">
+  <div class="terminal space shadow">
     <div class="top">
       <div class="icons">
         <!-- TODO: add interactivity to these -->
@@ -17,7 +17,7 @@ layout: default
       </div>
       <div class="title">zsh -- 70x32</div>
     </div>
-    <div class="bg-black text-terminal h-full p-8 space-y-2">
+    <div class="bg-black text-terminal h-full p-8 space-y-2 h-96 min-h-full">
       {{ content }}
     </div>
   </div>
