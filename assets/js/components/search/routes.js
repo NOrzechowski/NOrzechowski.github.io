@@ -10,7 +10,7 @@ export const routes = [
   { name: 'Food', path: '/food/' },
   { name: 'Headshot', path: '/headshot/' },
   {
-    name: 'MidYearQuiz',
-    path: '/midYearQuiz/'
+    name: 'Quiz',
+    path: '/quiz/'
   }
 ]
