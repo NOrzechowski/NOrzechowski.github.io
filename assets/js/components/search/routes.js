@@ -8,6 +8,9 @@ export const routes = [
   { name: 'Bungee Jump', path: '/bungee/' },
   { name: 'Blog', path: '/blog/' },
   { name: 'Food', path: '/food/' },
-  { name: 'Headshot', path: '/headshot/' }
-  { name: "MidYearQuiz", path: "https://docs.google.com/presentation/d/14-sjg6bd7sc63QzAgfebtY6ScKNTxAihkrF00ThMCF8/edit?usp=sharing"}
+  { name: 'Headshot', path: '/headshot/' },
+  {
+    name: 'MidYearQuiz',
+    path: 'https://docs.google.com/presentation/d/14-sjg6bd7sc63QzAgfebtY6ScKNTxAihkrF00ThMCF8/edit?usp=sharing'
+  }
 ]
