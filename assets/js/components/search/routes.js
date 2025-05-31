@@ -11,6 +11,6 @@ export const routes = [
   { name: 'Headshot', path: '/headshot/' },
   {
     name: 'MidYearQuiz',
-    path: 'https://docs.google.com/presentation/d/14-sjg6bd7sc63QzAgfebtY6ScKNTxAihkrF00ThMCF8/edit?usp=sharing'
+    path: '/midYearQuiz/'
   }
 ]
