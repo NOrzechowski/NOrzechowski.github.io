@@ -4,10 +4,9 @@ title: About
 permalink: /about/
 ---
 
-I am a software engineer, currently working as a big data tech lead over at [Citi](https://citi.com). I'm primarily working on Java [Spark](https://spark.apache.org/) applications to process firm-wide treasury data.
+<add md sections to make this more inresting to read?>
+I am a software engineer, currently working as a big data tech lead over at [Citi](https://citi.com). I'm primarily working on Java [Spark](https://spark.apache.org/) applications to comprehensively process all capital data. Recently, I've also been building Agentic AI apps, using RAG (PgVector) and MCPs.
 
-My preferred programming language is the one that solves the problem at hand, but recently I've really enjoyed [Elixir](https://elixir-lang.org/), particularly for my person projects. Check it out if you're unfamiliar! For web stuff it's best paired with a glass of the [Pheonix Framework](https://www.phoenixframework.org/), but is a natural and fun feeling functional language on it's own. Perhaps some code examples to come; either here or on my Github.
-
-As a user of technology myself I believe that software should be easy to use and solve the specific problem it set out to. To this end I have put my trust in [Design Thinking](https://en.wikipedia.org/wiki/Design_thinking), and as an engineer I like using the easy-to-use utilitarian CSS framework [TailwindCSS](https://tailwindcss.com/)
-
-I'm comfortable on most web stacks (LAMP, MEAN, Java+Spring, etc), have extensive experience building out data warehouses and analytics features, and have strong opinions on DevOps; from application reliability to developer happiness.
+My background is rich in music, science, engineering, and problem solving. Growing up homeschooled, I focused on music as a big part of my life: training classically in Violin and Piano, and taking on private students of all ages as well as Music Teacher of a local Montessori school for grades K-8.
+I first started my journey with programming at an Advanced Studies Program for highschoolers in a 6 week intensive course on AI. There I wrote my first computer program (the Towers of Hanoi problem in LISP), programmed a robot to compete in sumo wrestling, and fell in love with coding. Then, in undergrad during my dual degree program between Clark University and Columbia University, I received a BA in Computer Science with a Mathematics minor and a concentration in Computational Science and a BS in Electrical engineering with a specialization on Digital Signal Processing.
+In my career, I have worked on teams in a variety of industries and contributed in many ways, from building Saas solutions for shipping logistics, consulting on backend systems for vehicle rental agenencies, launching a first-to-market healthtech app in hospital systems, and bringing mission critical data intensive applications to Production.

@@ -1,6 +1,7 @@
 // Future content ideas:
 // Frisbee, music, contra dancing, teaching, company culture, devops, cats, tv shows, industries I've worked in quiz, other mini games,
 // about this site page, what's the meaning of life (that redirects to lmgtfy for 42), "easter egg"
+// automation examples (git, autosys, validation)
 export const routes = [
   { name: 'About', path: '/about/' },
   { name: 'Home', path: '/', displayValue: 'Neil Orzechowski' },
